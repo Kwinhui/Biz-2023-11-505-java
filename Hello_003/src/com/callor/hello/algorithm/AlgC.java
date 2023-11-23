@@ -22,8 +22,10 @@ public class AlgC {
 		if (bYes) {
 			System.out.println("짝수");
 		}
-		else
-			System.out.println("홀수");
+		
+		if (num1 % 2 == 0) {
+			System.out.println("짝수");
+		}
 		
 		
 		
