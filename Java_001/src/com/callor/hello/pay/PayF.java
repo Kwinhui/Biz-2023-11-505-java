@@ -1,4 +1,4 @@
-package com.callor.hello;
+package com.callor.hello.pay;
 
 public class PayF {
 	public static void main(String[] args) {
