@@ -8,11 +8,14 @@ public class PrimeGA {
 			int num = i + 1;
 			int index = 0;
 			for (index = 2; index < num; index++) {
-				num++;
 				if ((num) % index == 0) {
 					break;
 				}
+				
 			}
+		if (index >= num) {
+			System.out.println(num);
+		}
 
 		}
 

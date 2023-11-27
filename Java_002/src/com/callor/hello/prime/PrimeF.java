@@ -17,7 +17,7 @@ public class PrimeF {
 		if (index < num) {
 			System.out.printf(" %3d MOD %3d = %3d", num, index, num % index);
 			System.out.printf("%3d 는 소수가 아님\n", num);
-		}else {
+		}else { 
 			System.out.printf("%3d 는 소수가 임\n", num);
 		}
 		

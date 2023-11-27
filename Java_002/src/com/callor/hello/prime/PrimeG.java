@@ -7,14 +7,14 @@ public class PrimeG {
 		System.out.println("----------------------------");
 		
 		for (int i = 1; i < 100; i++) {
-			int num = i+1;
+			int num = i + 1;
 			int index = 0;
 			for (index = 2; index < num; index++) {
 				if ((num) % index == 0) {
 					break;
 				}
 			}
-			if (num <= index) {
+			if (index >= num) {
 				System.out.println(num);
 			}
 		}
