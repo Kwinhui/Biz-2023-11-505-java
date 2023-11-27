@@ -6,7 +6,7 @@ public class PrimeEB {
 		System.out.println("소수 판별하기");
 		System.out.println("-------------------------");
 		for (int i = 0; i < 10; i++) {
-			int num = (int) (Math.random() * 100) + 2;
+			int num = (int)(Math.random() * 100) + 2;
 			int index = 0;
 			for (index = 2; index < num; index++) {
 				if (num % index == 0) {

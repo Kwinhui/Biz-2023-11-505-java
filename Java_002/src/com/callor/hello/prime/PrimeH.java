@@ -2,25 +2,29 @@ package com.callor.hello.prime;
 
 public class PrimeH {
 	public static void main(String[] args) {
-		System.out.println("=======================");
-		System.out.println("2 ~ 100까지 수 중 소수들의 합 : 1060");
-		System.out.println("=======================");
+		System.out.println("==============================");
+//		System.out.println("2 ~ 100까지 수 중 소수들의 합 : 1060");
+		
 		int sum = 0;
-		for (int i = 1; i < 100; i++) {
+		for(int i = 1; i < 100; i++) {
 			int num = i + 1;
 			int index = 0;
-			for (index = 2 ; index < num; index++) {
+			for (index = 2; index < num; index++) {
+				
 				if (num % index == 0) {
 					break;
 				}
 			}
-			if (num < index) {
+			if (index >= num) {
 				sum += num;
-				
 			}
 			
 		}
+					
+				
 		
+		System.out.printf("2 ~ 100까지 수 중 소수들의 합 : %d\n", sum);
+		System.out.println("==============================");
 		
 		
 		
