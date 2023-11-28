@@ -16,6 +16,9 @@ public static boolean isPrime(int num) {
 }
 
 	public static void main(String[] args) {
+		System.out.println("==========================");
+		System.out.println("소수판별하기");
+		System.out.println("--------------------------");
 		for (int i = 0; i < 5; i++) {
 			
 			int num = (int)(Math.random() * 100) + 2;
@@ -27,6 +30,7 @@ public static boolean isPrime(int num) {
 				
 			}
 		}
+		System.out.println("==========================");
 				
 	}
 	
