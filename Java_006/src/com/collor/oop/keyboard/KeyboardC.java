@@ -46,7 +46,7 @@ public class KeyboardC {
 			System.out.printf("%d 번째 정답 맞춤\n", count);
 		} else {
 			System.out.printf("%d 번째 정답 못맞춤\n", count);
-			
+			System.out.println("정답 = " + rndNum);
 		}
 			
 		System.out.println("GAME OVER!!");
