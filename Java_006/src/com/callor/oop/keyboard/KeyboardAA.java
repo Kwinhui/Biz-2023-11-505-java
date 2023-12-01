@@ -1,4 +1,4 @@
-package com.collor.oop.keyboard;
+package com.callor.oop.keyboard;
 
 import java.util.Scanner;
 
