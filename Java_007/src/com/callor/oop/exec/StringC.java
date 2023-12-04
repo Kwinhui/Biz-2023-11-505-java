@@ -46,12 +46,12 @@ public class StringC {
 		scan.close();
 		
 		
-		String[] result = line.split(",");
-		int sum = 0;
-		for(int i = 1; i < result.length; i++) {
-			sum += Integer.valueOf(result[i]);
-			System.out.println(sum);
-		}
+
+
+
+		
+		
+
 			
 		
 			
