@@ -19,6 +19,7 @@ public class ScoreC {
 			scores[i].scoreMath = (int)(Math.random() * 50) + 51;
 		}
 		
+		// 배열에 저장된 점수 화면에 출력하기
 		
 
 	}
