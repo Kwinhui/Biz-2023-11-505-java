@@ -108,7 +108,7 @@ public class ScoreServiceA {
 		for(int i = 0; i < scores.length; i++) {
 			ScoreDto scoreDto = scores[i];
 			
-//			System.out.printf("s\t", scores[i].stdNum);
+//			System.out.printf("%s\t", scores[i].stdNum);
 			System.out.printf("%s\t", scoreDto.stdNum);
 			System.out.printf("%3d\t", scoreDto.kor);
 			System.out.printf("%3d\t", scoreDto.eng);
