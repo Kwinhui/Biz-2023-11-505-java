@@ -6,8 +6,9 @@ import java.io.InputStream;
 import java.util.Scanner;
 
 import com.callor.score.model.ScoreDto;
+import com.callor.score.utils.Line;
 
-public class ScoreService {
+public class ScoreServiceA {
 	
 	// 변수의 scope 가 class 영역이다.
 	// 이 변수는 ScoreService 클래스의 소유이다.
@@ -27,7 +28,7 @@ public class ScoreService {
 	 *  필요에 따라 변수, 객체 등을 만드는 코드를 추가할 수 있다.
 	 */
 	
-	public ScoreService() {
+	public ScoreServiceA() {
 		String dataFile = "src/com/callor/score/service/data.txt";
 		InputStream is = null;
 		try {
@@ -85,24 +86,41 @@ public class ScoreService {
 	 * loadScores() method 가 data.txt 파일에서
 	 * 학생의 성적data 를 읽어서, scores  배열에 저장해둔 상태
 	 * scores 배열에 저장된 데이터를 화면에 성적표로 출력하기
+	 * = "scores 는 ScoreDto 배열 type 이다."
+	 * scores[index] 의 type 은 무엇인가?
+	 * scores 배열의 개별 요소의 type 이 무엇인가?
+	 * scores 개별 요소의 type 은 ScoreDto
+	 * 
 	 */
 	
 	public void printScores() {
-		System.out.println("=".repeat(80));
+		Line.dLine(100);
 		System.out.println("학번\t 국어\t 영어\t 수학\t 음악\t 미술\t SW공학\t DB\t 총점\t 평균");
-		System.out.println("-".repeat(80));
+		Line.sLine(100);
+		
+		/*
+		 * scores 의 type 이 무엇인가?
+		 * scores 라는 배열을 선언할때 어떤 명령(도구)를 사용하여
+		 * 선언했는가?
+		 * ScoreDto[] 를 사용하여 scores 를 선언했다.
+		 */
+		
 		for(int i = 0; i < scores.length; i++) {
-			System.out.printf("%s\t", scores[i].stdNum);
-			System.out.printf("%d\t", scores[i].kor);
-			System.out.printf("%d\t", scores[i].eng);
-			System.out.printf("%d\t", scores[i].math);
-			System.out.printf("%d\t", scores[i].music);
-			System.out.printf("%d\t", scores[i].art);
-			System.out.printf("%d\t", scores[i].sw);
-			System.out.printf("%d\t", scores[i].db);
-			System.out.printf("%d\t", scores[i].getTotal());
-			System.out.printf("%5.2f\t\n", scores[i].getAvg());
-		}
+			ScoreDto scoreDto = scores[i];
+			
+//			System.out.printf("s\t", scores[i].stdNum);
+			System.out.printf("%s\t", scoreDto.stdNum);
+			System.out.printf("%3d\t", scoreDto.kor);
+			System.out.printf("%3d\t", scoreDto.eng);
+			System.out.printf("%3d\t", scoreDto.math);
+			System.out.printf("%3d\t", scoreDto.music);
+			System.out.printf("%3d\t", scoreDto.art);
+			System.out.printf("%3d\t", scoreDto.sw);
+			System.out.printf("%3d\t", scoreDto.db);
+			System.out.printf("%3d\t", scoreDto.getTotal());
+			System.out.printf("%5.2f\n", scoreDto.getAvg());
+		}	
+		Line.dLine(100);
 		
 		
 		
@@ -116,7 +134,7 @@ public class ScoreService {
 		
 		
 		
-	}
+	}	// end printScore()
 	
 	
 	
