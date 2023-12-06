@@ -32,9 +32,13 @@ public class BlackjackDto {
 	}
 	@Override
 	public String toString() {
-		return "[denomination=" + denomination + ", cardSuit=" + cardSuit
-				+ ", value=" + value + "]";
+		return "[숫자 = " + denomination + ", 패턴 = " + cardSuit
+				+ ", 카드 = " + value + cardSuit + "]";
 	}
+//	public String toString() {
+//		return "[denomination=" + denomination + ", cardSuit=" + cardSuit
+//				+ ", value=" + value + "]";
+//	}
 	
 	
 	

@@ -9,10 +9,10 @@ public class Game {
 	public static void main(String[] args) {
 		CardService card = new CardService();
 		BlackjackDto black = new BlackjackDto();
-		CardService service = new CardService();
 		
-		service.makeDeck();
-		List<BlackjackDto> deckList = service.getDeck();
+		
+		card.makeDeck();
+		List<BlackjackDto> deckList = card.getDeck();
 		
 		for(BlackjackDto dto : deckList) {
 			System.out.println(dto);
