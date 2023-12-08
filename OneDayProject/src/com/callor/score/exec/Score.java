@@ -6,7 +6,7 @@ public class Score {
 	public static void main(String[] args) {
 		
 		ScoreService scoreService = new ScoreService();
-		scoreService.makeScore();
+		scoreService.makeScore(150);
 		scoreService.printStdNum();
 		
 		

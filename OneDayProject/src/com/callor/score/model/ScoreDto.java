@@ -9,6 +9,26 @@ public class ScoreDto {
 	public int music;
 	public int art;
 	
+//	public int sumKor;
+//	public int sumEng;
+//	public int sumMath;
+//	public int sumMusic;
+//	public int sumArt;
+//	public int sumKorAvg;
+//	
+//	public int sumTotal;
+//	private float sumAvg;
+//	public int getSumTotal() {
+//		sumTotal = sumKor;
+//		sumTotal += sumEng;
+//		sumTotal += sumMath;
+//		sumTotal += sumMusic;
+//		sumTotal += sumArt;
+//		return sumTotal;
+//	}
+	
+	
+	
 	
 	private int total;
 	private float avg;

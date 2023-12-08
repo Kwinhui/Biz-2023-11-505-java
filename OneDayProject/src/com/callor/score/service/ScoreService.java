@@ -14,7 +14,9 @@ public class ScoreService {
 
 	}
 
-	public void makeScore() {
+	public void makeScore(int student) {
+		
+		int num = 0;
 		int size = scores.size();
 		String strStdNum = "23000";
 		if (scores.size() > 0) {
@@ -27,7 +29,7 @@ public class ScoreService {
 //			strStdNum = String.format("23%03d", intStdNum);
 //		}
 
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < student; i++) {
 			int intStdNum = Integer.valueOf(strStdNum.substring(2));
 			intStdNum++;
 			strStdNum = String.format("23%03d", intStdNum);
@@ -101,10 +103,11 @@ public class ScoreService {
 		System.out.printf("%d\t%d\t%d\t%d\t%d\t%d\n",sumKor, sumEng, sumMath, sumMusic, sumArt, sumTotal);
 		System.out.print("평균\t\t");
 		System.out.printf("%.2f\t%.2f\t%.2f\t%.2f\t%.2f\t\t%.2f\n", sumKorAvg, sumEngAvg, sumMathAvg, sumMusicAvg, sumArtAvg, sumTotalAvg);
+		Line.dLine(100);
 		
 		
+	}
 		
 
-	}
 
 }
