@@ -7,7 +7,7 @@ import com.callor.score.model.ScoreDto;
 import com.callor.score.utils.Line;
 
 public class ScoreService {
-	List<ScoreDto> scores = null;
+	private List<ScoreDto> scores = null;
 
 	public ScoreService() {
 		scores = new ArrayList<ScoreDto>();
@@ -18,10 +18,6 @@ public class ScoreService {
 		
 		int num = 0;
 		int size = scores.size();
-		String strStdNum = "23000";
-		if (scores.size() > 0) {
-			strStdNum = scores.get(scores.size() - 1).stdNum;
-		}
 //		for(int i = 0; i < size; i++) {
 //			
 //			int intStdNum = Integer.valueOf(strStdNum.substring(2));
@@ -30,7 +26,11 @@ public class ScoreService {
 //		}
 
 		for (int i = 0; i < student; i++) {
+			String strStdNum = "23000";
 			int intStdNum = Integer.valueOf(strStdNum.substring(2));
+			if (scores.size() > 0) {
+				strStdNum = scores.get(scores.size() - 1).stdNum;
+			}
 			intStdNum++;
 			strStdNum = String.format("23%03d", intStdNum);
 
