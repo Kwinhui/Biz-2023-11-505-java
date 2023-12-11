@@ -42,26 +42,25 @@ public class StudentServiceV2 {
 //			inputStr[i] = scan.nextLine();
 			String str = scan.nextLine();
 			if (str.equals("QUIT")) {
+				
 				return false;
 			}
+
+			
 			inputStr[i] = str;
 
 		}
 
 		StudentDto stDto = new StudentDto();
 		stDto.num = inputStr[학번];
-
 		stDto.name = inputStr[이름];
 		stDto.dept = inputStr[학과];
 		stDto.grade = inputStr[학년];
 		stDto.tel = inputStr[전화번호];
 		stDto.addr = inputStr[주소];
 		student.add(stDto);
+		
 
-//		if (stDto.num.equals(inputStr[0])) {
-//			
-//			
-//		}
 		return true;
 
 	} // end inputStudent
@@ -70,18 +69,23 @@ public class StudentServiceV2 {
 		boolean result = true;
 		while (result) {
 			result = inputStudent();
+			
 
 		}
 		System.out.println("입력 종료 퇴근하자!!!");
 
 	}
 
-	public boolean check() {
-		StudentDto stDto = new StudentDto();
-		while(true) {
-			inputStudent();
-			if()
+	public boolean check(String check) {
+		
+		
+		for(StudentDto dto : student) {
+			if(dto.num.equals(check)) {
+				return true;
+			}
 		}
+		
+		return false;
 	}
 
 //	public void printStudent() {
