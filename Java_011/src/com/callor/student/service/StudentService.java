@@ -5,14 +5,15 @@ import java.util.Scanner;
 import com.callor.student.models.StudentDto;
 
 public class StudentService {
-	Scanner scan = null;
-	StudentDto studentDto = null;
+	private Scanner scan = null;
+	private StudentDto studentDto = null;
 	public StudentService() {
 		scan = new Scanner(System.in);
 		studentDto = new StudentDto();
 	}
 	
 	public void inputStudent() {
+		
 		System.out.print("학번 >> ");
 		studentDto.num = scan.nextLine();
 		System.out.print("이름 >> ");
@@ -26,6 +27,8 @@ public class StudentService {
 		System.out.print("주소 >> ");
 		studentDto.addr = scan.nextLine();
 		System.out.println();
+		StudentDto studentDto = new StudentDto();
+		
 		
 	}
 	public void printStudent() {
