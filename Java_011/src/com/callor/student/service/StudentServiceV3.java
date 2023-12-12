@@ -1,5 +1,8 @@
 package com.callor.student.service;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -19,13 +22,18 @@ public class StudentServiceV3 {
 	// 다만 이 클래스를 누군가 상속하여 사용할 것 으로 예상되면
 	// protected 으로 선언한다.
 	private Scanner scan = null;
+	
 	private List<StudentDto> students = null;
+	private String dataFile = "";
+	private InputStream is = null;
 
 	// 클래스 영역에 선언된 변수는 생성자 method 에서
 	// 값을 초기화 하여 사용할 준비를 한다.
 	public StudentServiceV3() {
 		scan = new Scanner(System.in);
 		students = new ArrayList<StudentDto>();
+		dataFile = "src/com/callor/student/models/student.txt";
+
 
 	}
 
@@ -138,6 +146,52 @@ public class StudentServiceV3 {
 			System.out.printf("%s\t", dto.tel);
 			System.out.printf("%s\t\n", dto.addr);
 		}
-	}
+	}	// end printStudent()
 
+	public void loadStudent() {
+		
+		try {
+			is = new FileInputStream(dataFile);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		scan = new Scanner(is);
+		while(scan.hasNext()) {
+			String file = scan.nextLine();
+			String[] files = file.split(",");
+			StudentDto std = new StudentDto();
+			
+			try {
+				std.num = files[0];
+				std.name = files[1];
+				std.dept = files[2];
+				std.grade = files[3];
+				std.tel = files[4];
+				std.addr = files[5];
+				
+			} catch (Exception e) {
+				// TODO: handle exception
+				System.out.println("데이터 읽는 중 오류 발생");
+				System.out.println(file);
+				break;
+			}
+			students.add(std);
+			
+		}
+		for(StudentDto dto : students) {
+			System.out.print(dto.num + "\t");
+			System.out.print(dto.name + "\t");
+			System.out.print(dto.dept + "\t");
+			System.out.print(dto.grade + "\t");
+			System.out.print(dto.tel + "\t");
+			System.out.println(dto.addr);
+			
+		}
+		
+		
+		
+	}
+	
+	
 }

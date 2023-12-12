@@ -1,5 +1,8 @@
 package com.callor.student.service;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -59,8 +62,8 @@ public class StudentServiceV3A {
 	private StudentDto selectStdNum(String num) {
 		/*
 		 * students 는 List type 이다. students 의 요소는 StudentDto type 이다. 이 명령은 Students
-		 * 리스트 개수만큼 반복하라 반복 하면서 students 리스트의 개별 요소를 get(읽기) 하여 StudentDto type 인 dto 에
-		 * 할당하여 코드블럭({})에 전달하라!
+		 * 리스트 개수만큼 반복하라 반복 하면서 students 리스트의 개별 요소를 get(읽기) 하여
+		 * StudentDto type 인 dto 에 할당하여 코드블럭({})에 전달하라!
 		 */
 		for(StudentDto dto : students) {
 			if(dto.num.equals(num)) return dto;
@@ -142,7 +145,38 @@ public class StudentServiceV3A {
 			System.out.printf("%s\t\n", dto.addr);
 		}
 		Line.dLine(100);
+	}	// end printStudent
+	
+	public void loadStudent() {
+		String stFile = "src/com/callor/student/models/student.txt";
+		InputStream is = null;
+		Scanner fileScan = null;
+		try {
+			is = new FileInputStream(stFile);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		fileScan = new Scanner(is);
+		while(fileScan.hasNext()) {
+			String line = fileScan.nextLine();
+			String[] stds = line.split(",");
+			StudentDto stDto = new StudentDto();
+			
+			stDto.num = stds[0];
+			stDto.name = stds[1];
+			stDto.dept = stds[2];
+			stDto.grade = stds[3];
+			stDto.tel = stds[4];
+			stDto.addr = stds[5];
+			
+			students.add(stDto);
+			
+		}
+		fileScan.close();
+		
 	}
+	
 	
 	
 
