@@ -50,7 +50,7 @@ public class StudentServiceImplV1 implements StudentService{
 	
 	@Override
 	public boolean inputStudent() {
-		// 키보드라 학생의 개별 정보들(학번, 이름... 등등)을 입력받고
+		// 키보드로 학생의 개별 정보들(학번, 이름... 등등)을 입력받고
 		// 임시로 저장할 배열
 		// StdIndex enum 에 선언된 요소의 개수를 세어서
 		// 그 개수를 사용하여 inputStr 배열을 생성한다.
