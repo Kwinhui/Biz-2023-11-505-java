@@ -12,11 +12,11 @@ package com.callor.student.models;
  */
 
 
-public enum StIndex {
+public enum StdIndex {
 
 	학번(0), 이름(1), 학과(2), 학년(3), 전화번호(4), 주소(5);
 	private int index;
-	StIndex(int index) {
+	StdIndex(int index) {
 		this.index = index;
 	}
 	public int getIndex() {
