@@ -37,6 +37,7 @@ public class StudentServiceImplV1 implements StudentService{
 	// 동일한 학번의 요소가 있으면 그 요소를 return
 	// 없으면 null 을 return 
 	protected StudentDto selectStdNum(String num) {
+		// TODO : 학생정보 찾기
 		for(StudentDto std : students) {
 			if(std.num.equals(num)) {
 				
@@ -50,6 +51,8 @@ public class StudentServiceImplV1 implements StudentService{
 	
 	@Override
 	public boolean inputStudent() {
+		// TODO : 한 학생의 정보 입력받기
+		
 		// 키보드로 학생의 개별 정보들(학번, 이름... 등등)을 입력받고
 		// 임시로 저장할 배열
 		// StdIndex enum 에 선언된 요소의 개수를 세어서
@@ -85,6 +88,7 @@ public class StudentServiceImplV1 implements StudentService{
 
 	@Override
 	public void inputStudents() {
+		// TODO : 여러 학생의 정보 입력받기
 //		while(true) {
 //			if(!this.inputStudent()) break;
 //		}
@@ -100,13 +104,13 @@ public class StudentServiceImplV1 implements StudentService{
 
 	@Override
 	public void loadStudents() {
-		// TODO Auto-generated method stub
+		// TODO : 학생정보 읽어오기
 		
 	}
 
 	@Override
 	public void printStudent() {
-		
+		// TODO : 학생정보 출력하기
 		Line.dLine(100);
 		System.out.println("한울고교 학생정보");
 		Line.dLine(100);
@@ -125,6 +129,11 @@ public class StudentServiceImplV1 implements StudentService{
 			
 			
 
+		
+	}
+	@Override
+	public void saveStudent() {
+		// TODO Auto-generated method stub
 		
 	}
 	
