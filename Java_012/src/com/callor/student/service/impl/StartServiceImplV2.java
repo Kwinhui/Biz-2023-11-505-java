@@ -22,7 +22,7 @@ public class StartServiceImplV2  extends StartServiceImplV1{
 	@Override
 	public void mainMenu() {
 		Line.dLine(50);
-		System.out.println("한울 고교 학생정보 관리");
+		System.out.println("한울 고교 학생정보 관리 startServiceimplv2");
 		Line.dLine(50);
 		System.out.println("업무를 선택해 주세요");
 		Line.sLine(50);
@@ -69,6 +69,7 @@ public class StartServiceImplV2  extends StartServiceImplV1{
 			if(selectMenu == null) break;
 			
 			else if (selectMenu == MenuIndex.학생정보_입력.getIndex()) {
+				System.out.println("StartServiceImplV2");
 				// System.out.println("학생정보 입력");
 				stService.inputStudents();
 			} else if (selectMenu == MenuIndex.학생정보_조회.getIndex()) {
@@ -82,6 +83,7 @@ public class StartServiceImplV2  extends StartServiceImplV1{
 				
 			
 		}
+		
 		System.out.println("업무종료~!!");
 	}	// end startApp();
 		

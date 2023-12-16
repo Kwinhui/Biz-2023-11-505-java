@@ -26,6 +26,7 @@ public class StartServiceImplV3 extends StartServiceImplV2 {
 			if(selectMenu == null) break;
 			
 			else if (selectMenu == MenuIndex.학생정보_입력.getIndex()) {
+				System.out.println("StartServiceImplV3");
 				// System.out.println("학생정보 입력");
 				stService.inputStudents();
 				
@@ -51,6 +52,7 @@ public class StartServiceImplV3 extends StartServiceImplV2 {
 		// 업무가 종료되면
 		// students 에 보관중인 데이터를 student.txt 파일에 저장
 		stService.saveStudent();
+		
 		
 		System.out.println("업무종료~!!");
 	}	// end startApp();

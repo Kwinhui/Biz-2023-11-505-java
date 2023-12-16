@@ -2,7 +2,7 @@ package com.callor.hello.prime;
 
 public class PrimeC {
 	public static void main(String[] args) {
-		int num = 7;
+		int num = 9;
 		
 		boolean isPrime = true;
 		for (int i = 2; i < num; i++) {
@@ -14,7 +14,7 @@ public class PrimeC {
 			}
 
 		}
-		System.out.println();
+		System.out.println("");
 				
 			
 		}

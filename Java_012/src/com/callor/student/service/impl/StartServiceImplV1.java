@@ -32,12 +32,14 @@ public class StartServiceImplV1  implements StartService{
 	 */
 	public StartServiceImplV1(StudentService stService) {
 		scan = new Scanner(System.in);
-		stService = this.stService;    // new StudentServiceImplV1();
+//		stService = this.stService;    // new StudentServiceImplV1();
+		this.stService = stService; 
+			
 	}
 	@Override
 	public void mainMenu() {
 		Line.dLine(50);
-		System.out.println("한울고교 학사관리");
+		System.out.println("한울고교 학사관리 startServiceimplV1");
 		Line.dLine(50);
 		System.out.println("업무를 선택해 주세요");
 		Line.sLine(50);
@@ -60,6 +62,7 @@ public class StartServiceImplV1  implements StartService{
 			String str = scan.nextLine();
 			int num = 0;
 			if(str.equals("QUIT")) {
+				
 				System.out.println("입력 종료");
 				return null;
 				
