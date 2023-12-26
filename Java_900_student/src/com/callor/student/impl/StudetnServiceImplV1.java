@@ -13,83 +13,96 @@ import com.callor.utils.Line;
 public class StudetnServiceImplV1 implements StudentService {
 	private List<StudentDto> studentDto = null;
 	private Scanner scan = null;
-	private StudentDto stDto = null;
-	InputStream is = null;
-	String dataFile = "";
 
 	public StudetnServiceImplV1() {
-		stDto = new StudentDto();
+		scan = new Scanner(System.in);
 		studentDto = new ArrayList<StudentDto>();
-		dataFile = "src/data.txt";
+
+	}
+
+	@Override
+	public void inputStudent() {
+
+		while (true) {
+			StudentDto std = new StudentDto();
+			Line.dLine(50);
+			System.out.println("찾는 학생이름을 입력하세요(종료하려면 QUIT를 입력)");
+			Line.sLine(50);
+			System.out.print("이름 >> ");
+			String str = scan.nextLine();
+
+			boolean found = false;
+			this.loadStdData();
+			for (StudentDto dto : studentDto) {
+				if (dto.name.equals(str)) {
+					this.printStudent(dto);
+//					System.out.printf("학번 : %s \n", dto.num);
+//					System.out.printf("이름 : %s \n", dto.name);
+//					System.out.printf("학과 : %s \n", dto.dept);
+//					System.out.printf("학년 : %s \n", dto.grade);
+//					System.out.printf("번호 : %s \n", dto.tel);
+//					System.out.printf("주소 : %s \n", dto.addr);
+					found = true;
+					break;
+				}
+			}
+			if (str.equals("QUIT")) {
+				System.out.println("시스템 종료!");
+				break;
+			}
+			if (!found) {
+				System.out.printf("%s 자료는 없습니다\n", str);
+
+			}
+
+			if (str.isBlank()) {
+				System.out.println("이름을 다시 입력해주세요");
+				continue;
+			}
+		} // end while
+	}
+
+	@Override
+	public void loadStdData() {
+		String file = "src/com/callor/utils/data.txt";
+		Scanner scan = null;
+		InputStream is = null;
+
 		try {
-			is = new FileInputStream(dataFile);
+			is = new FileInputStream(file);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		scan = new Scanner(is);
-
-	}
-
-	@Override
-	public void saveStudent() {
-
 		while (scan.hasNext()) {
+
 			String line = scan.nextLine();
 			String[] lines = line.split(",");
-			
-			StudentDto stdDto = new StudentDto();
-			try {
-				stdDto.stdNum = lines[0];
-				stdDto.stdName = lines[1];
-				stdDto.stdDept = lines[2];
-				stdDto.stdGrade = lines[3];
-				stdDto.stdAddr = lines[4];
-				stdDto.stdTel = lines[5];
 
-			} catch (Exception e) {
-				System.out.println("데이터 읽는 중 오류 발생");
-				System.out.println(line);
-				break;
-			}
+			StudentDto stdDto = new StudentDto();
+			stdDto.num = lines[0];
+			stdDto.name = lines[1];
+			stdDto.dept = lines[2];
+			stdDto.grade = lines[3];
+			stdDto.tel = lines[4];
+			stdDto.addr = lines[5];
+
 			studentDto.add(stdDto);
-			System.out.println(line);
-			
+
 		}
+		scan.close();
+
 	}
 
 	@Override
-	public void findName() {
-		this.saveStudent();
-		Line.dLine(50);
-		System.out.println("찾는 학생이름을 입력하세요(종료하려면 QUIT를 입력)");
-		Line.sLine(50);
-		System.out.print("이름 >> ");
+	public void printStudent(StudentDto std) {
 		
-
-		}
-
-	
-
-	@Override
-	public void printData() {
-		
-		this.findName();
-		
-		Scanner scans = new Scanner(System.in);
-		String str = scans.nextLine();
-		if(str.equals("QUIT")) {
-			System.out.println("프로그램 종료");
-			return;
-		}
-		for(int i = 0; i < studentDto.size(); i++) {
-			if(str.equals(studentDto.indexOf(str))) {
-				System.out.println("같다");
-			} else {
-				System.out.println("다르다");
-				
-				break;
-			}
-		}
+		System.out.printf("학번 : %s\n", std.num);
+		System.out.printf("이름 : %s\n", std.name);
+		System.out.printf("학과 : %s\n", std.dept);
+		System.out.printf("학년 : %s\n", std.grade);
+		System.out.printf("번호 : %s\n", std.tel);
+		System.out.printf("주소 : %s\n", std.addr);
 
 	}
 

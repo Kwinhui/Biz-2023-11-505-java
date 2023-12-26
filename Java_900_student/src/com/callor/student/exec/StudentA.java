@@ -6,8 +6,9 @@ import com.callor.student.service.StudentService;
 public class StudentA {
 	public static void main(String[] args) {
 		StudentService stService = new StudetnServiceImplV1();
+		stService.inputStudent();
 		
-		stService.printData();
+		
 		
 	}
 }
